@@ -1,0 +1,16 @@
+.tx-contentrating-pi1{position:relative;max-width:240px}
+.tx-content-rating-rate-wrapper{position:relative;z-index:31;width:100%;height:22px;margin-left:55px;max-width:128px;cursor:pointer}
+.tx-content-rating-rate-full{position:absolute;height:22px;width:100%;background-image:url(star_inactive.png)}
+.tx-content-rating-rate-value{position:absolute;height:22px;width:0;background-image:url(star_active.png);-webkit-transition:width 1s ease-in-out;-moz-transition:width 1s ease-in-out;-ms-transition:width 1s ease-in-out;-o-transition:width 1s ease-in-out;transition:width 1s ease-in-out}
+.tx-content-rating-text-wrapper{position:relative;margin-top:10px}
+.tx-content-rating-text-left{float:left}
+.tx-content-rating-text-right{float:right}
+.tx-content-rating-clear{height:0;font-size:0;line-height:0;clear:both}
+.tx-content-rating-line-wrapper{position:relative;z-index:30;height:8px;margin-top:-4px}
+.tx-content-rating-line-sep-big{display:none}
+.tx-content-rating-line-sep-small{display:none}
+.tx-content-rating-mouse-wrapper{position:absolute;width:100%}
+.tx-content-rating-mouse-sep{position:absolute;height:22px;opacity:0;background-image:url(star_hover.png)}
+.tx-content-rating-mouse-sep:hover{opacity:1}
+.tx-content-rating-mouse-hint{display:none}
+div.tx-contentrating-pi1 h3 {text-align:center}

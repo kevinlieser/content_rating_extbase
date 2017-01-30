@@ -1,0 +1,63 @@
+<f:layout name="Default" />
+
+
+<f:section name="main">
+	
+<div class="tx-contentrating-pi1">
+	<f:if condition="{includeJQuery}">
+		<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+	</f:if>
+		
+		
+	<f:if condition="{defaultStyle}">
+		<f:then>
+			<link rel="stylesheet" type="text/css" media="all" href="typo3conf/ext/content_rating_extbase/Resources/Public/style.green.orange.css" />
+		</f:then>
+		<f:else>
+			<link rel="stylesheet" type="text/css" media="all" href="typo3conf/ext/content_rating_extbase/Resources/Public/style.{useStyle}.css" />
+		</f:else>
+	</f:if>
+		
+			
+	<script type="text/javascript" src="typo3conf/ext/content_rating_extbase/Resources/Public/script.js"></script>
+	<script type="text/javascript">
+		var tx_content_rating_url = "{rateUrl}";
+		var tx_content_rating_urlhash = "{rateUrlhash}";
+	</script>
+	
+	<div itemscope itemtype="http://schema.org/Product">
+		<h3 itemprop="name"><f:translate key="rate_header" /></h3>
+		<div itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">
+			<div class="tx-content-rating-rate-wrapper">
+				<div class="tx-content-rating-rate-full">&nbsp;</div>
+				<div class="tx-content-rating-rate-value" style="width:{ratePerc}%;">&nbsp;</div>
+				<div class="tx-content-rating-mouse-wrapper">
+					<div class="tx-content-rating-mouse-sep" data-rate="5" style="width:100%;">&nbsp;</div>
+					<div class="tx-content-rating-mouse-sep" data-rate="4" style="width:80%;">&nbsp;</div>
+					<div class="tx-content-rating-mouse-sep" data-rate="3" style="width:60%;">&nbsp;</div>
+					<div class="tx-content-rating-mouse-sep" data-rate="2" style="width:40%;">&nbsp;</div>
+					<div class="tx-content-rating-mouse-sep" data-rate="1" style="width:20%;">&nbsp;</div>
+				</div>
+			</div>
+			<div class="tx-content-rating-mouse-hint"><f:translate key="rate_btn" /></div>
+			<div class="tx-content-rating-line-wrapper">
+				<div class="tx-content-rating-line-sep-big" style="left:0%;">&nbsp;</div>
+				<div class="tx-content-rating-line-sep-small" style="left:20%;">&nbsp;</div>
+				<div class="tx-content-rating-line-sep-small" style="left:40%;">&nbsp;</div>
+				<div class="tx-content-rating-line-sep-small" style="left:60%;">&nbsp;</div>
+				<div class="tx-content-rating-line-sep-small" style="left:80%;">&nbsp;</div>
+				<div class="tx-content-rating-line-sep-big" style="left:100%;margin-left:-1px;">&nbsp;</div>
+			</div>
+			<div class="tx-content-rating-text-wrapper">
+				<div class="tx-content-rating-text-left"><span class="tx-content-rating-countspan" itemprop="ratingCount">{rateCount}</span> <f:translate key="rate_rates" /></div>
+				<div class="tx-content-rating-text-right"><span class="tx-content-rating-percspan">{ratePerc}</span> %</div>
+				<div class="tx-content-rating-clear" itemprop="worstRating">1</div>
+				<div class="tx-content-rating-clear" itemprop="bestRating">5</div>
+				<div class="tx-content-rating-clear" itemprop="ratingValue">{rateValue}</div>
+				<div class="tx-content-rating-clear">&nbsp;</div>
+			</div>
+		</div>
+	</div>
+</div>
+	
+</f:section>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2014-04-11T20:02:06Z" product-name="content_rating_extbase">
+		<header/>
+		<body>
+
+			<trans-unit id="tx_contentratingextbase_domain_model_rates">
+				<source>Rates</source>
+			</trans-unit>
+			<trans-unit id="tx_contentratingextbase_domain_model_rates.rateurl">
+				<source>rateurl</source>
+			</trans-unit>
+			<trans-unit id="tx_contentratingextbase_domain_model_rates.ratepid">
+				<source>ratepid</source>
+			</trans-unit>
+			<trans-unit id="tx_contentratingextbase_domain_model_rates.rategetvars">
+				<source>rategetvars</source>
+			</trans-unit>
+			<trans-unit id="tx_contentratingextbase_domain_model_rates.rateip">
+				<source>rateip</source>
+			</trans-unit>
+			<trans-unit id="tx_contentratingextbase_domain_model_rates.ratevalue">
+				<source>ratevalue</source>
+			</trans-unit>
+			
+			
+			
+			<trans-unit id="rate_header">
+				<source>Rate this Content</source>
+			</trans-unit>
+			<trans-unit id="rate_btn">
+				<source>Rate</source>
+			</trans-unit>
+			<trans-unit id="rate_rates">
+				<source>Rates</source>
+			</trans-unit>
+			
+		</body>
+	</file>
+</xliff>

@@ -1,0 +1,49 @@
+
+plugin.tx_contentratingextbase {
+	view {
+		templateRootPath = {$plugin.tx_contentratingextbase.view.templateRootPath}
+		partialRootPath = {$plugin.tx_contentratingextbase.view.partialRootPath}
+		layoutRootPath = {$plugin.tx_contentratingextbase.view.layoutRootPath}
+	}
+	persistence {
+		storagePid = {$plugin.tx_contentratingextbase.persistence.storagePid}
+	}
+	features {
+		# uncomment the following line to enable the new Property Mapper.
+		# rewrittenPropertyMapper = 1
+	}
+}
+
+plugin.tx_contentratingextbase._CSS_DEFAULT_STYLE (
+	textarea.f3-form-error {
+		background-color:#FF9F9F;
+		border: 1px #FF0000 solid;
+	}
+
+	input.f3-form-error {
+		background-color:#FF9F9F;
+		border: 1px #FF0000 solid;
+	}
+
+	.tx-content-rating-extbase table {
+		border-collapse:separate;
+		border-spacing:10px;
+	}
+
+	.tx-content-rating-extbase table th {
+		font-weight:bold;
+	}
+
+	.tx-content-rating-extbase table td {
+		vertical-align:top;
+	}
+
+	.typo3-messages .message-error {
+		color:red;
+	}
+
+	.typo3-messages .message-ok {
+		color:green;
+	}
+
+)

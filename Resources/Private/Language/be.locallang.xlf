@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" target-language="be" datatype="plaintext" original="messages" date="2014-04-11T20:02:06Z" product-name="content_rating_extbase">
+		<header/>
+		<body>
+			
+			<trans-unit id="rate_header">
+				<target>Оценить этот сайт</target>
+			</trans-unit>
+			<trans-unit id="rate_btn">
+				<target>Оценить</target>
+			</trans-unit>
+			<trans-unit id="rate_rates">
+				<target>Отзывы</target>
+			</trans-unit>
+			
+		</body>
+	</file>
+</xliff>

@@ -1,0 +1,5 @@
+# cat=basic/enable; type=boolean; label=jQuery already included
+jquery_included = 0
+
+# cat=basic; type=options[Green/Orange=green.orange,Yellow/Orange=yellow.orange,Blue/Gray=blue.gray,Pink=pink,Stars=stars]; label=Style
+style = 
