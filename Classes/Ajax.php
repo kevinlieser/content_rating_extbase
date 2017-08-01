@@ -3,10 +3,6 @@
 * Initialize Database
 */
 
-if(\TYPO3\CMS\Core\Utility\VersionNumberUtility::convertVersionNumberToInteger(TYPO3_version) < 7000000) {
-	\TYPO3\CMS\Frontend\Utility\EidUtility::connectDB();
-}
-
 class ajaxClass {
 
 	protected $hmacSalt = 'contentRatingExtbase_a3f60445f2031b5cd83534130eeba64cf4a0887b';
@@ -18,18 +14,16 @@ class ajaxClass {
 	
 	function main(){
 		
-		if(\TYPO3\CMS\Core\Utility\VersionNumberUtility::convertVersionNumberToInteger(TYPO3_version) < 7000000) {
-			$feUserObj = tslib_eidtools::initFeUser(); 
-			tslib_eidtools::connectDB();
-		}
-		
 		$rateUrl = \TYPO3\CMS\Core\Utility\GeneralUtility::_GP('url');
 		$rateUrlHash = \TYPO3\CMS\Core\Utility\GeneralUtility::_GP('urlhash');
 		$checkUrlHash = \TYPO3\CMS\Core\Utility\GeneralUtility::hmac($rateUrl, $this->hmacSalt);
 		
-		if($checkUrlHash != $rateUrlHash) {
-			$GLOBALS['TSFE']->pageUnavailableAndExit();
-		} else {
+		if($checkUrlHash == $rateUrlHash) {
+			
+			// Maximum Rate value
+			$rateValue = intval(\TYPO3\CMS\Core\Utility\GeneralUtility::_GP('rate'));
+			if($rateValue < 0) { $rateValue = 0; }
+			if($rateValue > 5) { $rateValue = 5; }
 			
 			// Check IP
 			$selectFields = '*';
@@ -45,7 +39,7 @@ class ajaxClass {
 				$field_values = array('pid' => 1
 									 ,'rate_url' => $rateUrl
 									 ,'rate_ip' => $_SERVER['REMOTE_ADDR']
-									 ,'rate_value' => \TYPO3\CMS\Core\Utility\GeneralUtility::_GP('rate')
+									 ,'rate_value' => $rateValue
 									 ,'tstamp' => time()
 									 ,'crdate' => time()
 									 );
@@ -56,7 +50,7 @@ class ajaxClass {
 				// Update DB
 				$into_table   = 'tx_contentrating_rates';
 				$where_clause = 'rate_url = "'.$GLOBALS['TYPO3_DB']->quoteStr($rateUrl, 'tx_contentrating_rates').'" AND rate_ip = "'.$GLOBALS['TYPO3_DB']->quoteStr($_SERVER['REMOTE_ADDR'], 'tx_contentrating_rates').'"';
-				$field_values = array('rate_value' => $GLOBALS['TYPO3_DB']->quoteStr(\TYPO3\CMS\Core\Utility\GeneralUtility::_GP('rate'), 'tx_contentrating_rates')
+				$field_values = array('rate_value' => $GLOBALS['TYPO3_DB']->quoteStr($rateValue, 'tx_contentrating_rates')
 									 ,'tstamp' => time()
 									 );
 				$res = $GLOBALS['TYPO3_DB']->exec_UPDATEquery($into_table, $where_clause, $field_values);
