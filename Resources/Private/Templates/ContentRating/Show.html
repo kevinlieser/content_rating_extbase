@@ -4,22 +4,7 @@
 <f:section name="main">
 	
 <div class="tx-contentrating-pi1">
-	<f:if condition="{includeJQuery}">
-		<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
-	</f:if>
-		
-		
-	<f:if condition="{defaultStyle}">
-		<f:then>
-			<link rel="stylesheet" type="text/css" media="all" href="typo3conf/ext/content_rating_extbase/Resources/Public/style.green.orange.css" />
-		</f:then>
-		<f:else>
-			<link rel="stylesheet" type="text/css" media="all" href="typo3conf/ext/content_rating_extbase/Resources/Public/style.{useStyle}.css" />
-		</f:else>
-	</f:if>
-		
-			
-	<script type="text/javascript" src="typo3conf/ext/content_rating_extbase/Resources/Public/script.js"></script>
+
 	<script type="text/javascript">
 		var tx_content_rating_url = "{rateUrl}";
 		var tx_content_rating_urlhash = "{rateUrlhash}";

@@ -47,3 +47,21 @@ plugin.tx_contentratingextbase._CSS_DEFAULT_STYLE (
 	}
 
 )
+
+# @todo CSS Einbindung des Styles
+page.includeCSS {
+	content_rating_extbase_default = typo3conf/ext/content_rating_extbase/Resources/Public/style.{$plugin.content_rating_extbase.style}.css
+	content_rating_extbase_default.insertData = 1
+}
+
+# @todo Jquery in den Footer einbinden wenn der Hacken im EM nicht gesetzt ist
+page.includeJSFooterlibs{
+	jquery_content_rating = http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js
+	jquery_content_rating.if.isTrue = {$plugin.content_rating_extbase.jquery_included}
+}
+
+# @todo JS in den Footer ausgelagert
+page.includeJSFooter{
+	rating = typo3conf/ext/content_rating_extbase/Resources/Public/script.js
+}
+
