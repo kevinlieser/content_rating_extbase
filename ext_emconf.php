@@ -16,7 +16,7 @@ $EM_CONF[$_EXTKEY] = array (
 
 Let your Users easily rate your Content. Simple to use Rating-Extension with Google Rating Rich Snippets. The Extension is based on the jQuery JavaScript Framework.',
   'category' => 'plugin',
-  'version' => '3.0.0',
+  'version' => '3.0.1',
   'state' => 'stable',
   'uploadfolder' => false,
   'createDirs' => '',
