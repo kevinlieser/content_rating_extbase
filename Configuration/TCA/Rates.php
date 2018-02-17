@@ -20,27 +20,25 @@ $GLOBALS['TCA']['tx_contentrating_rates'] = array(
 	'columns' => array(
 		'rate_url' => array(
 			'exclude' => 1,
-			'label' => 'LLL:EXT:content_rating_extbase/Resources/Private/Language/locallang_db.xlf:tx_contentrating_rates.rateurl',
+			'label' => 'LLL:EXT:content_rating_extbase/Resources/Private/Language/locallang_db.xlf:tx_contentratingextbase_domain_model_rates.rateurl',
 			'config' => array(
-				'type' => 'text',
-				'cols' => 40,
-				'rows' => 15,
+				'type' => 'input',
+				'size' => 30,
 				'eval' => 'trim'
 			),
 		),
 		'rate_pid' => array(
 			'exclude' => 1,
-			'label' => 'LLL:EXT:content_rating_extbase/Resources/Private/Language/locallang_db.xlf:tx_contentrating_rates.ratepid',
+			'label' => 'LLL:EXT:content_rating_extbase/Resources/Private/Language/locallang_db.xlf:tx_contentratingextbase_domain_model_rates.ratepid',
 			'config' => array(
-				'type' => 'text',
-				'cols' => 40,
-				'rows' => 15,
+				'type' => 'input',
+				'size' => 30,
 				'eval' => 'trim'
 			),
 		),
 		'rate_getvars' => array(
 			'exclude' => 1,
-			'label' => 'LLL:EXT:content_rating_extbase/Resources/Private/Language/locallang_db.xlf:tx_contentrating_rates.rategetvars',
+			'label' => 'LLL:EXT:content_rating_extbase/Resources/Private/Language/locallang_db.xlf:tx_contentratingextbase_domain_model_rates.rategetvars',
 			'config' => array(
 				'type' => 'text',
 				'cols' => 40,
@@ -50,17 +48,16 @@ $GLOBALS['TCA']['tx_contentrating_rates'] = array(
 		),
 		'rate_ip' => array(
 			'exclude' => 1,
-			'label' => 'LLL:EXT:content_rating_extbase/Resources/Private/Language/locallang_db.xlf:tx_contentrating_rates.rateip',
+			'label' => 'LLL:EXT:content_rating_extbase/Resources/Private/Language/locallang_db.xlf:tx_contentratingextbase_domain_model_rates.rateip',
 			'config' => array(
-				'type' => 'text',
-				'cols' => 40,
-				'rows' => 15,
+				'type' => 'input',
+				'size' => 30,
 				'eval' => 'trim'
 			),
 		),
 		'rate_value' => array(
 			'exclude' => 1,
-			'label' => 'LLL:EXT:content_rating_extbase/Resources/Private/Language/locallang_db.xlf:tx_contentrating_rates.ratevalue',
+			'label' => 'LLL:EXT:content_rating_extbase/Resources/Private/Language/locallang_db.xlf:tx_contentratingextbase_domain_model_rates.ratevalue',
 			'config' => array(
 				'type' => 'input',
 				'size' => 4,
