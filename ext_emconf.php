@@ -28,9 +28,9 @@ Let your Users easily rate your Content. Simple to use Rating-Extension with Goo
   array (
     'depends' => 
     array (
-      'extbase' => '7.6.0-8.7.99',
-      'fluid' => '7.6.0-8.7.99',
-      'typo3' => '7.6.0-8.7.99',
+      'extbase' => '8.7.0-9.5.99',
+      'fluid' => '8.7.0-9.5.99',
+      'typo3' => '8.7.0-9.5.99',
     ),
     'conflicts' => 
     array (
