@@ -1,0 +1,15 @@
+{
+    "name": "kevinlieser/content_rating_extbase",
+    "type": "typo3-cms-extension",
+    "version": "4.0.0",
+    "description": "Extbase version of content_rating. Let your Users easily rate your Content. Simple to use Rating-Extension with Google Rating Rich Snippets. The Extension is based on the jQuery JavaScript Framework",
+    "homepage": "https://github.com/kevinlieser/content_rating_extbase",
+    "require": {
+        "typo3/cms-core": "8.1 - 9.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "TYPO3\\ContentRatingExtbase\\": "Classes/"
+        }
+    }
+}

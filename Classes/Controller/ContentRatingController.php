@@ -24,6 +24,10 @@ namespace TYPO3\ContentRatingExtbase\Controller;
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
 
+use TYPO3\CMS\Core\Database\Query\QueryBuilder;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3\CMS\Core\Database\ConnectionPool;
+
 /**
  *
  *
@@ -78,18 +82,28 @@ class ContentRatingController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionCo
 		$this->urlhash  = \TYPO3\CMS\Core\Utility\GeneralUtility::hmac($this->url, $this->hmacSalt);
 		$this->ip 		= $_SERVER['REMOTE_ADDR'];
 		$this->pid 		= $GLOBALS["TSFE"]->id;
+
+    /** @var QueryBuilder $queryBuilder */
+    $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)->getQueryBuilderForTable('tx_contentrating_rates');
 		
 		// Fetch All Records
 		$selectFields = '*';
 		$fromTable    = 'tx_contentrating_rates';
-		$whereClause  = '1 AND rate_url = "'.$GLOBALS['TYPO3_DB']->quoteStr($this->url, 'tx_contentrating_rates').'" AND t3_origuid = 0';
-		$groupBy      = '';
-		$orderBy      = '';
-		$limit        = '';
-		$recordList = $GLOBALS['TYPO3_DB']->exec_SELECTgetRows($selectFields, $fromTable, $whereClause, $groupBy, $orderBy, $limit);
-		$this->rate_count = count($recordList);
-		$GLOBALS['TYPO3_DB']->sql_num_rows($res);
-		foreach($recordList as $record) { $this->rate_tmp1 = $this->rate_tmp1 + $record['rate_value']; }
+
+		/** @var \Doctrine\DBAL\Driver\Statement $statement */
+    $recordList = $queryBuilder
+      ->select($selectFields)
+      ->from($fromTable)
+      ->where(
+        $queryBuilder->expr()->eq('rate_url', $queryBuilder->createNamedParameter($this->url)),
+        $queryBuilder->expr()->eq('t3_origuid', 0)
+      )->execute()->fetchAll();
+
+    $this->rate_count = count($recordList);
+
+    foreach($recordList as $record) {
+        $this->rate_tmp1 = $this->rate_tmp1 + $record['rate_value'];
+    }
 		
 		// Calculate
 		$this->rate_tmp2 = $this->rate_count * 5; // Max possible Rating
