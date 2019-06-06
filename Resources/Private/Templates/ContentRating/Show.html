@@ -33,14 +33,18 @@
 				<div class="tx-content-rating-line-sep-small" style="left:80%;">&nbsp;</div>
 				<div class="tx-content-rating-line-sep-big" style="left:100%;margin-left:-1px;">&nbsp;</div>
 			</div>
-			<div class="tx-content-rating-text-wrapper">
-				<div class="tx-content-rating-text-left"><span class="tx-content-rating-countspan" itemprop="ratingCount">{rateCount}</span> <f:translate key="rate_rates" /></div>
-				<div class="tx-content-rating-text-right"><span class="tx-content-rating-percspan">{ratePerc}</span> %</div>
-				<div class="tx-content-rating-clear" itemprop="worstRating">1</div>
-				<div class="tx-content-rating-clear" itemprop="bestRating">5</div>
-				<div class="tx-content-rating-clear" itemprop="ratingValue">{rateValue}</div>
-				<div class="tx-content-rating-clear">&nbsp;</div>
-			</div>
+			<f:if condition="{rateCount} > 0">
+				<f:then>
+					<div class="tx-content-rating-text-wrapper">
+						<div class="tx-content-rating-text-left"><span class="tx-content-rating-countspan" itemprop="ratingCount">{rateCount}</span> <f:translate key="rate_rates" /></div>
+						<div class="tx-content-rating-text-right"><span class="tx-content-rating-percspan">{ratePerc}</span> %</div>
+						<div class="tx-content-rating-clear" itemprop="worstRating">1</div>
+						<div class="tx-content-rating-clear" itemprop="bestRating">5</div>
+						<div class="tx-content-rating-clear" itemprop="ratingValue">{rateValue}</div>
+						<div class="tx-content-rating-clear">&nbsp;</div>
+					</div>
+				</f:then>
+			</f:if>
 		</div>
 	</div>
 </div>
